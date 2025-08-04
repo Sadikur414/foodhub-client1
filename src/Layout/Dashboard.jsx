@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex  ">
-      <div className="bg-[#D1A054] w-72 min-h-screen text-center p-4">
+      <div className="bg-[#D1A054] w-72 min-h-screen text-center p-4  z-10">
         {/************************** Dashboard Navigation Bar ******************************/}
         <div className="mb-8">
           <h1 className="text-2xl font-bold">Foodhub</h1>
@@ -27,7 +27,7 @@ const Dashboard = () => {
         </div>
 
         {/* Dashboard Main Options */}
-        <div className="flex flex-col gap-2 text-left px-2">
+        <div className="flex flex-col gap-2 text-left px-2 ">
           {isAdmin ? (
             // *******************************************admin part*************************
             <>
@@ -46,7 +46,7 @@ const Dashboard = () => {
               </NavLink>
 
               <NavLink
-                to="/"
+                to="/dashboard/additem"
                 className={({ isActive }) =>
                   `flex gap-2 items-center px-3 py-2 rounded-md transition-all duration-300 ${
                     isActive
@@ -60,7 +60,7 @@ const Dashboard = () => {
               </NavLink>
 
               <NavLink
-                to="/"
+                to="/dashboard/manageitem"
                 className={({ isActive }) =>
                   `flex gap-2 items-center px-3 py-2 rounded-md transition-all duration-300 ${
                     isActive
@@ -174,7 +174,7 @@ const Dashboard = () => {
         </div>
 
         {/* Public Site Navigation */}
-        <div className="flex flex-col gap-2 text-left px-2">
+        <div className="flex flex-col gap-2 text-left  px-2">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -217,10 +217,10 @@ const Dashboard = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `flex gap-2 items-center px-3 py-2 rounded-md transition-all duration-300 ${
+              `flex gap-2 items-center px-3 py-2 rounded-md transition-all duration-300 md:mb-8 ${
                 isActive
                   ? "bg-[#b9843c] text-white font-bold"
-                  : "hover:bg-[#c79a4b]"
+                  : "hover:bg-[#c79a4b] "
               }`
             }
           >
@@ -230,7 +230,7 @@ const Dashboard = () => {
       </div>
 
       {/***************************************  Outlet section(right) ******************************/}
-      <div className="flex-1">
+      <div className="flex-1 ">
         <Outlet></Outlet>
       </div>
     </div>

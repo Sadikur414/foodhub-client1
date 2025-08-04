@@ -10,6 +10,9 @@ import Dashboard from "../Layout/Dashboard";
 import Cart from "../Pages/Deshboard/MyCart/Cart";
 import Review from "../Pages/Deshboard/Review/Review";
 import AllUser from "../Pages/Deshboard/AllUsers/AllUser";
+import AddItems from "../Pages/Deshboard/AddItems/AddItems";
+import ManageItem from "../Pages/Deshboard/ManageItem/ManageItem";
+import UpdateItem from "../Pages/Deshboard/UpdatteItem/UpdateItem";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +63,20 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <AllUser></AllUser>,
+      },
+      {
+        path: "additem",
+        element: <AddItems></AddItems>,
+      },
+      {
+        path: "manageitem",
+        element: <ManageItem></ManageItem>,
+      },
+      {
+        path: "updateItem/:id",
+        element: <UpdateItem></UpdateItem>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/menu/${params.id}`),
       },
     ],
   },
